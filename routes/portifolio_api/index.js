@@ -7,7 +7,6 @@ router.use('/contact', require('./contact'));
 router.use('/education', require('./education'));
 router.use('/experience', require('./experience'));
 router.use('/home', require('./home'));
-router.use('/login', require('./login'));
 router.use('/project', require('./project'));
 
 module.exports = router;

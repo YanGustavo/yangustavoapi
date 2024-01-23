@@ -18,9 +18,11 @@ const app = express();
 app.use(cors())
 app.use(express.json());
 
+const login = require('./routes/login');
 const portifolioAPI = require('./routes/portifolio_api');
 
-app.use('/portifolioAPI', portifolioAPI)
+app.use('/login', login );
+app.use('/portifolioAPI', portifolioAPI);
 
 app.listen(4000, () => {
     console.log(`Server Started at ${4000}`)
