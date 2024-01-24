@@ -19,7 +19,7 @@ app.use(cors())
 app.use(express.json());
 
 const login = require('./routes/login');
-const portifolioAPI = require('./routes/portifolio_api');
+const portifolioAPI = require('./routes/portifolio_api/index');
 
 app.use('/login', login );
 app.use('/portifolioAPI', portifolioAPI);
