@@ -24,7 +24,7 @@ const portifolioAPI = require('./routes/portifolio_api/index');
 app.use('/login', login );
 app.use('/portifolioAPI', portifolioAPI);
 
-const PORT = process.env.PORT || 4000; // Use a variável de ambiente PORT ou padrão para 4000
+const PORT = process.env.PORT || 5000; // Use a variável de ambiente PORT ou padrão para 4000
 
 app.listen(PORT, () => {
     console.log(`Server Started at ${PORT}`);
