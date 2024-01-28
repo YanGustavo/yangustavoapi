@@ -1,5 +1,5 @@
 const express = require('express');
-const About = require('../../models/portifolio_api/About');
+const Education = require('../../../models/app_models/portifolio/Education');
 const router = express.Router();
 
 // Post Method
@@ -7,7 +7,7 @@ router.post('/add', async (req, res) => {
     try {
         const extractData = req.body;
 
-        const saveData = await About.create(extractData);
+        const saveData = await Education.create(extractData);
         if (saveData) {
             res.status(200).json("Data saved successfully");
         } else {
@@ -21,7 +21,7 @@ router.post('/add', async (req, res) => {
 // Get all Method
 router.get('/getAll', async (req, res) => {
     try {
-        const data = await About.find();
+        const data = await Education.find();
         res.json(data);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -31,7 +31,7 @@ router.get('/getAll', async (req, res) => {
 // Get by ID Method
 router.get('/:id', async (req, res) => {
     try {
-        const data = await About.findById(req.params.id);
+        const data = await Education.findById(req.params.id);
         if (data) {
             res.json(data);
         } else {
@@ -49,7 +49,7 @@ router.patch('/update/:id', async (req, res) => {
         const updatedData = req.body;
         const options = { new: true };
 
-        const result = await About.findByIdAndUpdate(id, updatedData, options);
+        const result = await Education.findByIdAndUpdate(id, updatedData, options);
 
         if (result) {
             res.json(result);
@@ -65,7 +65,7 @@ router.patch('/update/:id', async (req, res) => {
 router.delete('/delete/:id', async (req, res) => {
     try {
         const id = req.params.id;
-        const data = await About.findByIdAndDelete(id);
+        const data = await Education.findByIdAndDelete(id);
 
         if (data) {
             res.json(`Document with ID ${id} has been deleted.`);

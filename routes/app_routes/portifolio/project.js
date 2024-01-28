@@ -1,5 +1,5 @@
 const express = require('express');
-const Project = require('../../models/portifolio_api/Project');
+const Project = require('../../../models/app_models/portifolio/Project');
 const router = express.Router();
 
 // Post Method
