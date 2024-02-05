@@ -1,4 +1,7 @@
 {
+  "buildCommand": "next build",
+  "devCommand": "next dev",
+  "framework": "nextjs",
   "rewrites": [
     { "source": "/(.*)", "destination": "index.js" }
   ]
